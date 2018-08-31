@@ -1,0 +1,29 @@
+From 18cab5925dd0164ec4b8c95117735075d13bac79 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Fri, 31 Aug 2018 14:00:29 -0700
+Subject: [PATCH] Use relative paths for symlinks
+
+In order to avoid the buildroot being in the symlink path use relative
+symlinks.
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index c1899cd..6c0cca4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -23,8 +23,8 @@ install : uninstall
+ 	install -m 644 config/suspend-x2-proc.cfg $(DESTDIR)$(PREFIX)/lib/pm-graph/config
+ 
+ 	install -d  $(DESTDIR)$(PREFIX)/bin
+-	ln -s $(DESTDIR)$(PREFIX)/lib/pm-graph/bootgraph.py $(DESTDIR)$(PREFIX)/bin/bootgraph
+-	ln -s $(DESTDIR)$(PREFIX)/lib/pm-graph/sleepgraph.py $(DESTDIR)$(PREFIX)/bin/sleepgraph
++	ln -s ../../lib/pm-graph/bootgraph.py $(DESTDIR)$(PREFIX)/bin/bootgraph
++	ln -s ../../lib/pm-graph/sleepgraph.py $(DESTDIR)$(PREFIX)/bin/sleepgraph
+ 
+ 	install -d  $(DESTDIR)$(PREFIX)/share/man/man8
+ 	install bootgraph.8 $(DESTDIR)$(PREFIX)/share/man/man8
+-- 
+2.18.0
+
