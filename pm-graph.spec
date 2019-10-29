@@ -4,7 +4,7 @@
 #
 Name     : pm-graph
 Version  : 5.5
-Release  : 5
+Release  : 6
 URL      : https://github.com/intel/pm-graph/archive/5.5.tar.gz
 Source0  : https://github.com/intel/pm-graph/archive/5.5.tar.gz
 Summary  : No detailed summary available
